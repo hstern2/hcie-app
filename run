@@ -1,0 +1,3 @@
+#!/bin/bash
+python3 postinstall.py
+streamlit run hcie_app/app.py

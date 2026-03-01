@@ -1,0 +1,29 @@
+[project]
+name = "hcie-app"
+version = "0.1.0"
+description = "Streamlit web app for the Heterocycle Isostere Explorer (HCIE)"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit",
+    "hcie @ git+https://github.com/BrennanGroup/HCIE.git",
+    "rdkit",
+    "numpy",
+    "scipy",
+    "pandas",
+    "Pillow",
+    "watchdog",
+    "streamlit-ketcher",
+]
+
+[project.scripts]
+hcie-app = "hcie_app.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["hcie_app"]
